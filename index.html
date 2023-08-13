@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- tailwind and daisy ui cdn  -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.5.1/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="shortcut icon" href="https://wallpapercave.com/wp/wp3185342.jpg" type="image/x-icon">
+    <title>তিন তাসবিহ</title>
+</head>
+<body class="h-screen w-screen text-white flex justify-center items-center text-center">
+    <div>
+        <div class="my-10 text-3xl font-bold space-y-3">
+            <h1>তিন তাসবিহ</h1>
+        </div> 
+        <div class="my-7 text-2xl font-bold space-y-3">
+            <p>সুবহানাল্লাহ</p>
+            <h1 class="text-xl"><span id="value1">0</span>/33</h1>
+            <button id="btn1" onclick="addPoint1()" class="btn btn-sm btn-success">+</button>
+        </div>
+        <div class="my-7 text-2xl font-bold space-y-3">
+            <p>আলহামদুলিল্লাহ</p>
+            <h1 class="text-xl"><span id="value2">0</span>/33</h1>
+            <button id="btn2" onclick="addPoint2()" class="btn btn-sm btn-success">+</button>
+        </div>
+        <div class="my-7 text-2xl font-bold space-y-3">
+            <p>আল্লাহু আকবর</p>
+            <h1 class="text-xl"><span id="value3">0</span>/34</h1>
+            <button id="btn3" onclick="addPoint3()" class="btn btn-sm btn-success">+</button>
+        </div>
+        <div class="my-7 text-2xl font-bold space-y-3">
+            <button id="btn4" onclick="addPoint4()" class="btn btn-success">পুনরায়</button>
+        </div>
+    </div>
+
+    <script>
+        let value1 = document.getElementById("value1");
+        let btn1 = document.getElementById("btn1");
+        document.getElementById("btn1").disabled = false;
+        let total1 = 0;
+        function addPoint1() {
+            total1++;
+            value1.innerHTML = total1;
+            if(total1 === 33){
+                document.getElementById("btn1").disabled = true;
+                document.getElementById("btn2").disabled = false;
+            }
+        }
+        let value2 = document.getElementById("value2");
+        let btn2 = document.getElementById("btn2");
+        document.getElementById("btn2").disabled = true;
+        let total2 = 0;
+        function addPoint2() {
+            total2++;
+            value2.innerHTML = total2;
+            if(total2 === 33){
+                document.getElementById("btn2").disabled = true;
+                document.getElementById("btn3").disabled = false;
+            }
+        }
+        let value3 = document.getElementById("value3");
+        let btn3 = document.getElementById("btn3");
+        document.getElementById("btn3").disabled = true;
+        let total3 = 0;
+        function addPoint3() {
+            total3++;
+            value3.innerHTML = total3;
+            if(total3 === 34){
+                document.getElementById("btn3").disabled = true;
+                document.getElementById("btn4").disabled = false;
+            }
+        }
+        document.getElementById("btn4").disabled = true;
+        function addPoint4() {
+            document.getElementById("btn4").disabled = true;
+            document.getElementById("btn1").disabled = false;
+            total1 = 0;
+            value1.innerHTML = total1;
+            total2 = 0;
+            value2.innerHTML = total2;
+            total3 = 0;
+            value3.innerHTML = total3;
+        }
+        
+    </script>
+</body>
+</html>
